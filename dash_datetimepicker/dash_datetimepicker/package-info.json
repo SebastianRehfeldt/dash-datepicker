@@ -24,7 +24,9 @@
   "author": "Sebastian Rehfeldt <sebastian.rehfeldt@gmx.net>",
   "license": "MIT",
   "dependencies": {
-    "ramda": "^0.26.1"
+    "moment": "^2.24.0",
+    "ramda": "^0.26.1",
+    "react-datetime": "^2.16.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

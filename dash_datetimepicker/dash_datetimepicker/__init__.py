@@ -44,7 +44,14 @@ _js_dist = [
     }
 ]
 
-_css_dist = []
+_css_dist = [
+    {
+        'relative_package_path': 'dash_datetimepicker.css',
+        'external_url': 'https://unpkg.com/{0}@{2}/{1}/{1}.css'.format(
+            package_name, __name__, __version__),
+        'namespace': package_name
+    }
+]
 
 
 for _component in __all__:

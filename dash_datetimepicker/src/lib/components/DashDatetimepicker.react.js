@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Datetime from 'react-datetime';
 
 /**
  * ExampleComponent is an example component.
@@ -12,6 +13,7 @@ export default class DashDatetimepicker extends Component {
     render() {
         const {id, label, setProps, value} = this.props;
 
+        return <Datetime/>
         return (
             <div id={id}>
                 ExampleComponent: {label}&nbsp;

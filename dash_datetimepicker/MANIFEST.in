@@ -1,3 +1,4 @@
+include dash_datetimepicker/dash_datetimepicker.css
 include dash_datetimepicker/dash_datetimepicker.min.js
 include dash_datetimepicker/dash_datetimepicker.min.js.map
 include dash_datetimepicker/metadata.json
