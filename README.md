@@ -10,6 +10,14 @@ cookiecutter https://github.com/plotly/dash-component-boilerplate.git
 
 # From within docker
 cd dash_datetimepicker
+
+# Start python example app
 . venv/bin/activate
 python usage.py
+
+# Start react app
+npm start
+
+# Build react component before running usage.py
+npm run build
 ```
