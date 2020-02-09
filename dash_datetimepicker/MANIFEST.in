@@ -1,0 +1,7 @@
+include dash_datetimepicker/dash_datetimepicker.min.js
+include dash_datetimepicker/dash_datetimepicker.min.js.map
+include dash_datetimepicker/metadata.json
+include dash_datetimepicker/package-info.json
+include README.md
+include LICENSE
+include package.json

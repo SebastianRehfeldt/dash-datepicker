@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  python:
+    build: .
+    command: tail -f /dev/null
+    container_name: dash-datepicker
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "8050:8050"
