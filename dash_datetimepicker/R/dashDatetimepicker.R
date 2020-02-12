@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-dashDatetimepicker <- function(id=NULL, label=NULL, value=NULL) {
+dashDatetimepicker <- function(id=NULL, value=NULL, startDate=NULL, endDate=NULL) {
     
-    props <- list(id=id, label=label, value=value)
+    props <- list(id=id, value=value, startDate=startDate, endDate=endDate)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ dashDatetimepicker <- function(id=NULL, label=NULL, value=NULL) {
         props = props,
         type = 'DashDatetimepicker',
         namespace = 'dash_datetimepicker',
-        propNames = c('id', 'label', 'value'),
+        propNames = c('id', 'value', 'startDate', 'endDate'),
         package = 'dashDatetimepicker'
         )
 

@@ -7,9 +7,7 @@ app = dash.Dash(__name__)
 
 app.layout = html.Div([
     dash_datetimepicker.DashDatetimepicker(
-        id='input',
-        value='my-value',
-        label='my-label'
+        id='input'
     ),
     html.Div(id='output')
 ])

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Datetime from 'react-datetime';
+import DatetimeRangePicker from 'react-datetime-range-picker';
 
 /**
  * ExampleComponent is an example component.
@@ -11,28 +11,26 @@ import Datetime from 'react-datetime';
  */
 export default class DashDatetimepicker extends Component {
     render() {
-        const {id, label, setProps, value} = this.props;
-
-        return <Datetime/>
+        console.log(this);
         return (
-            <div id={id}>
-                ExampleComponent: {label}&nbsp;
-                <input
-                    value={value}
-                    onChange={
-                        /*
-                         * Send the new value to the parent component.
-                         * setProps is a prop that is automatically supplied
-                         * by dash's front-end ("dash-renderer").
-                         * In a Dash app, this will update the component's
-                         * props and send the data back to the Python Dash
-                         * app server if a callback uses the modified prop as
-                         * Input or State.
-                         */
-                        e => setProps({ value: e.target.value })
-                    }
-                />
-            </div>
+            <DatetimeRangePicker
+                id={this.props.id}
+                value={this.props.value}
+                onEndDateChange={e =>
+                    this.props.setProps({endDate: e.toISOString()})
+                }
+                onStartDateChange={e =>
+                    this.props.setProps({startDate: e.toISOString()})
+                }
+                onChange={e =>
+                    this.props.setProps({
+                        value: {
+                            startDate: e['start'].toISOString(),
+                            endDate: e['end'].toISOString(),
+                        },
+                    })
+                }
+            />
         );
     }
 }
@@ -46,18 +44,26 @@ DashDatetimepicker.propTypes = {
     id: PropTypes.string,
 
     /**
-     * A label that will be printed when this component is rendered.
+     * The value displayed in the input.
      */
-    label: PropTypes.string.isRequired,
+    value: PropTypes.shape({
+        startDate: PropTypes.string,
+        endDate: PropTypes.string,
+    }),
 
     /**
      * The value displayed in the input.
      */
-    value: PropTypes.string,
+    startDate: PropTypes.string,
+
+    /**
+     * The value displayed in the input.
+     */
+    endDate: PropTypes.string,
 
     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
      */
-    setProps: PropTypes.func
+    setProps: PropTypes.func,
 };
