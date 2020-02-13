@@ -10,18 +10,13 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 }
 
 \usage{
-dashDatetimepicker(id=NULL, value=NULL, startDate=NULL, endDate=NULL)
+dashDatetimepicker(id=NULL, endDate=NULL, startDate=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
-\item{value}{Lists containing elements 'startdate', 'enddate'.
-those elements have the following types:
-  - startdate (character; optional)
-  - enddate (character; optional). The value displayed in the input.}
+\item{endDate}{Character. }
 
-\item{startDate}{Character. The value displayed in the input.}
-
-\item{endDate}{Character. The value displayed in the input.}
+\item{startDate}{Character. }
 }

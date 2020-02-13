@@ -13,9 +13,9 @@ app.layout = html.Div([
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
+@app.callback(Output('output', 'children'), [Input('input', 'startDate')])
+def display_output(startDate):
+    return 'You have entered {}'.format(startDate)
 
 
 if __name__ == '__main__':

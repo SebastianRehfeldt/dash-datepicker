@@ -2,3 +2,4 @@
 
 export(DashDatetimepicker)
 export(dashDatetimepicker)
+export(datePickerRange)

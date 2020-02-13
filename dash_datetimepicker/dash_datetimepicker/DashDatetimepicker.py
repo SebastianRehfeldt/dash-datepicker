@@ -13,19 +13,15 @@ which is editable by the user.
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks.
-- value (dict; optional): The value displayed in the input. value has the following type: dict containing keys 'startDate', 'endDate'.
-Those keys have the following types:
-  - startDate (string; optional)
-  - endDate (string; optional)
-- startDate (string; optional): The value displayed in the input.
-- endDate (string; optional): The value displayed in the input."""
+- endDate (string; default new Date())
+- startDate (string; default new Date())"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, startDate=Component.UNDEFINED, endDate=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'value', 'startDate', 'endDate']
+    def __init__(self, id=Component.UNDEFINED, endDate=Component.UNDEFINED, startDate=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'endDate', 'startDate']
         self._type = 'DashDatetimepicker'
         self._namespace = 'dash_datetimepicker'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'value', 'startDate', 'endDate']
+        self.available_properties = ['id', 'endDate', 'startDate']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

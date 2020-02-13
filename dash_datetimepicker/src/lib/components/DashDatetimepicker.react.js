@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import DatetimeRangePicker from 'react-datetime-range-picker';
+import moment from 'moment';
+import DatetimeRangePicker from '../utils/DatePickerRange.jsx';
 
 /**
  * ExampleComponent is an example component.
@@ -11,31 +12,24 @@ import DatetimeRangePicker from 'react-datetime-range-picker';
  */
 export default class DashDatetimepicker extends Component {
     render() {
-        console.log(this);
         return (
             <DatetimeRangePicker
-                id={this.props.id}
-                value={this.props.value}
+                {...this.props}
                 onEndDateChange={e =>
                     this.props.setProps({endDate: e.toISOString()})
                 }
                 onStartDateChange={e =>
                     this.props.setProps({startDate: e.toISOString()})
                 }
-                onChange={e =>
-                    this.props.setProps({
-                        value: {
-                            startDate: e['start'].toISOString(),
-                            endDate: e['end'].toISOString(),
-                        },
-                    })
-                }
             />
         );
     }
 }
 
-DashDatetimepicker.defaultProps = {};
+DashDatetimepicker.defaultProps = {
+    startDate: new Date(),
+    endDate: new Date(),
+};
 
 DashDatetimepicker.propTypes = {
     /**
@@ -44,26 +38,20 @@ DashDatetimepicker.propTypes = {
     id: PropTypes.string,
 
     /**
-     * The value displayed in the input.
-     */
-    value: PropTypes.shape({
-        startDate: PropTypes.string,
-        endDate: PropTypes.string,
-    }),
-
-    /**
-     * The value displayed in the input.
-     */
-    startDate: PropTypes.string,
-
-    /**
-     * The value displayed in the input.
-     */
-    endDate: PropTypes.string,
-
-    /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
+    endDate: PropTypes.oneOfType([
+        PropTypes.instanceOf(moment),
+        PropTypes.instanceOf(Date),
+        PropTypes.string,
+    ]),
+    startDate: PropTypes.oneOfType([
+        PropTypes.instanceOf(moment),
+        PropTypes.instanceOf(Date),
+        PropTypes.string,
+    ]),
 };
+
+export const propTypes = DashDatetimepicker.propTypes;
