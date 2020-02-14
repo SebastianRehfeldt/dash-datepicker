@@ -215,3 +215,15 @@ td.rdtYear:hover {
 .rdtDay.in-selecting-range {
     background-color: rgba(66, 139, 202, 0.4);
 }
+
+.datepicker-div {
+    display: flex;
+}
+.datepicker-arrow {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.datepicker-arrow > svg {
+    width: 20px;
+    height: 20px;
+}

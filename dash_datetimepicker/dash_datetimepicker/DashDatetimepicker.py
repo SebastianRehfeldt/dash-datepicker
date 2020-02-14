@@ -5,16 +5,14 @@ from dash.development.base_component import Component, _explicitize_args
 
 class DashDatetimepicker(Component):
     """A DashDatetimepicker component.
-ExampleComponent is an example component.
-It takes a property, `label`, and
-displays it.
-It renders an input with the property `value`
-which is editable by the user.
+Dash Datetime Range Picker is a component for selecting two dates (including times).
+It takes `startDate` and `endDate` as main properties and renders two inputs
+which open datepickers when they are clicked.
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks.
-- endDate (string; default new Date())
-- startDate (string; default new Date())"""
+- endDate (string; default new Date()): The endDate of the range picker. It will fire a dash callback if it is updated.
+- startDate (string; default new Date(new Date() - 1000 * 60 * 60 * 24)): The startDate of the range picker. It will fire a dash callback if it is updated."""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, endDate=Component.UNDEFINED, startDate=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'endDate', 'startDate']

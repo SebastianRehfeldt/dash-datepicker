@@ -1,6 +1,6 @@
 {
   "src/lib/components/DashDatetimepicker.react.js": {
-    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "description": "Dash Datetime Range Picker is a component for selecting two dates (including times).\nIt takes `startDate` and `endDate` as main properties and renders two inputs\nwhich open datepickers when they are clicked.",
     "displayName": "DashDatetimepicker",
     "methods": [],
     "props": {
@@ -36,7 +36,7 @@
           ]
         },
         "required": false,
-        "description": "",
+        "description": "The endDate of the range picker. It will fire a dash callback if it is updated.",
         "defaultValue": {
           "value": "new Date()",
           "computed": false
@@ -60,9 +60,9 @@
           ]
         },
         "required": false,
-        "description": "",
+        "description": "The startDate of the range picker. It will fire a dash callback if it is updated.",
         "defaultValue": {
-          "value": "new Date()",
+          "value": "new Date(new Date() - 1000 * 60 * 60 * 24)",
           "computed": false
         }
       }

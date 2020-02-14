@@ -4,14 +4,20 @@ import moment from 'moment';
 import DatetimeRangePicker from '../utils/DatePickerRange.jsx';
 
 /**
- * ExampleComponent is an example component.
- * It takes a property, `label`, and
- * displays it.
- * It renders an input with the property `value`
- * which is editable by the user.
+ * Dash Datetime Range Picker is a component for selecting two dates (including times).
+ * It takes `startDate` and `endDate` as main properties and renders two inputs
+ * which open datepickers when they are clicked.
  */
 export default class DashDatetimepicker extends Component {
     render() {
+        let startDate = DashDatetimepicker.defaultProps.startDate;
+        let endDate = DashDatetimepicker.defaultProps.endDate;
+        if (this.props.startDate === startDate) {
+            this.props.setProps({startDate: startDate.toISOString()});
+        }
+        if (this.props.endDate === endDate) {
+            this.props.setProps({endDate: endDate.toISOString()});
+        }
         return (
             <DatetimeRangePicker
                 {...this.props}
@@ -27,7 +33,7 @@ export default class DashDatetimepicker extends Component {
 }
 
 DashDatetimepicker.defaultProps = {
-    startDate: new Date(),
+    startDate: new Date(new Date() - 1000 * 60 * 60 * 24),
     endDate: new Date(),
 };
 
@@ -36,17 +42,22 @@ DashDatetimepicker.propTypes = {
      * The ID used to identify this component in Dash callbacks.
      */
     id: PropTypes.string,
-
     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
+    /**
+     * The endDate of the range picker. It will fire a dash callback if it is updated.
+     */
     endDate: PropTypes.oneOfType([
         PropTypes.instanceOf(moment),
         PropTypes.instanceOf(Date),
         PropTypes.string,
     ]),
+    /**
+     * The startDate of the range picker. It will fire a dash callback if it is updated.
+     */
     startDate: PropTypes.oneOfType([
         PropTypes.instanceOf(moment),
         PropTypes.instanceOf(Date),
