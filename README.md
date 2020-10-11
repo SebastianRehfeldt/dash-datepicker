@@ -26,13 +26,14 @@ npm start
 
 # Build datepicker
 npm run build
-python setup.py sdist
 ```
 
 # Test/publish created package
 
 ```bash
 # Test fresh build
+deactivate
+python setup.py sdist
 pip install dist/dash_datetimepicker-0.0.2.tar.gz
 python usage.py
 

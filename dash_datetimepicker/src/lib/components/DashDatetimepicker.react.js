@@ -9,7 +9,7 @@ import DatetimeRangePicker from "../utils/DatePickerRange.jsx";
  * which open datepickers when they are clicked.
  */
 export default class DashDatetimepicker extends Component {
-  render() {
+  componentDidMount() {
     let startDate = DashDatetimepicker.defaultProps.startDate;
     let endDate = DashDatetimepicker.defaultProps.endDate;
     if (this.props.startDate === startDate) {
@@ -18,6 +18,9 @@ export default class DashDatetimepicker extends Component {
     if (this.props.endDate === endDate) {
       this.props.setProps({ endDate: endDate.toISOString() });
     }
+  }
+
+  render() {
     return (
       <DatetimeRangePicker
         {...this.props}
