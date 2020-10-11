@@ -20,3 +20,6 @@ dashDatetimepicker(id=NULL, endDate=NULL, startDate=NULL)
 
 \item{startDate}{Character. The startDate of the range picker. It will fire a dash callback if it is updated.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

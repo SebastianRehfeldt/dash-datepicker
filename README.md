@@ -1,5 +1,10 @@
 # dash-datepicker
 
+This is a dash datetime range picker based on [react-datetime](https://github.com/YouCanBookMe/react-datetime).
+In contrast to the dash datepicker from dash-core-components, it is also possible to specify hours and minutes on a certain day.
+
+# Development
+
 ```bash
 # Create and exec into docker image
 docker-compose up
@@ -13,43 +18,33 @@ cd dash_datetimepicker
 
 # Start python example app
 . venv/bin/activate
+pip install -r requirements.txt
 python usage.py
 
 # Start react app
 npm start
 
-# Build react component before running usage.py
+# Build datepicker
 npm run build
+python setup.py sdist
 ```
 
 # Test/publish created package
 
 ```bash
-# within dash_datetimepicker
-npm run build
-python setup.py sdist
+# Test fresh build
+pip install dist/dash_datetimepicker-0.0.2.tar.gz
+python usage.py
 
-# within root folder
-virtualenv venv
-. venv/bin/activate
-pip install dash
-pip install dash_datetimepicker/dist/dash_datetimepicker-0.0.1.tar.gz
-python dash_datetimepicker/usage.py
-
-# publish within root folder
-deactivate
 # eventually create pypi account
-twine upload --repository-url https://test.pypi.org/legacy/ dash_datetimepicker/dist/* # test
 twine upload dist/*
 
-cd dash_datetimepicker
 rm -rf dist
 # eventually authenticate at npm
 npm login
 npm publish
-cd ..
 
-pip install dash
+# check published module
 pip install dash_datetimepicker
 python dash_datetimepicker/usage.py
 ```

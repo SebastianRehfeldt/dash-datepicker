@@ -1,3 +1,6 @@
 cookiecutter
 virtualenv
 twine
+black
+dash
+pypandoc
