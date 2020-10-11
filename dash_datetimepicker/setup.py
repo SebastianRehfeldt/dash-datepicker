@@ -10,8 +10,10 @@ with open("package.json") as f:
 
 package_name = package["name"].replace(" ", "_").replace("-", "_")
 
-pypandoc.pandoc_download.download_pandoc()
-long_description = pypandoc.convert_file("../README.md", "rst")
+try:
+    long_description = pypandoc.convert_file("../README.md", "rst")
+except:
+    long_description = None
 
 setup(
     name=package_name,
