@@ -2,15 +2,14 @@ import json
 import os
 from setuptools import setup
 
-import pypandoc
-
-
 with open("package.json") as f:
     package = json.load(f)
 
 package_name = package["name"].replace(" ", "_").replace("-", "_")
 
 try:
+    import pypandoc
+
     long_description = pypandoc.convert_file("../README.md", "rst")
 except:
     long_description = None
