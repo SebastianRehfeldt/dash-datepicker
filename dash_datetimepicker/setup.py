@@ -7,12 +7,9 @@ with open("package.json") as f:
 
 package_name = package["name"].replace(" ", "_").replace("-", "_")
 
-try:
-    import pypandoc
+with open("README.md") as f:
+    long_description = f.read()
 
-    long_description = pypandoc.convert_file("../README.md", "rst")
-except:
-    long_description = None
 
 setup(
     name=package_name,
@@ -23,6 +20,7 @@ setup(
     license=package["license"],
     description=package.get("description", package_name),
     long_description=long_description,
+    long_description_content_type="text/markdown",
     install_requires=[],
     classifiers=[
         "Framework :: Dash",

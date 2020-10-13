@@ -1,6 +1,6 @@
 {
   "name": "dash_datetimepicker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Dash component to select date and times",
   "repository": {
     "type": "git",
