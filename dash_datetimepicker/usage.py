@@ -6,7 +6,7 @@ import dash_html_components as html
 app = dash.Dash(__name__)
 
 app.layout = html.Div(
-    [dash_datetimepicker.DashDatetimepicker(id="input"), html.Div(id="output")]
+    [dash_datetimepicker.DashDatetimepicker(id="input", utc=True), html.Div(id="output")]
 )
 
 

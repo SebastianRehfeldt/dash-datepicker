@@ -38,6 +38,7 @@ export default class DashDatetimepicker extends Component {
 DashDatetimepicker.defaultProps = {
   startDate: new Date(new Date() - 1000 * 60 * 60 * 24),
   endDate: new Date(),
+  utc: false,
 };
 
 DashDatetimepicker.propTypes = {
@@ -66,6 +67,10 @@ DashDatetimepicker.propTypes = {
     PropTypes.instanceOf(Date),
     PropTypes.string,
   ]),
+  /**
+   * When true, input time values will be interpreted as UTC (Zulu time) by Moment.js. Otherwise they will default to the user's local timezone.
+   */
+  utc: PropTypes.bool,
 };
 
 export const propTypes = DashDatetimepicker.propTypes;
