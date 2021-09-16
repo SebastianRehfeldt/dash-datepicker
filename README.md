@@ -34,7 +34,7 @@ npm run build
 # Test fresh build
 deactivate
 python setup.py sdist
-pip install dist/dash_datetimepicker-0.0.4.tar.gz
+pip install dist/dash_datetimepicker-0.0.5.tar.gz
 python usage.py
 
 # eventually create pypi account
@@ -48,5 +48,5 @@ npm publish
 
 # check published module
 pip install dash_datetimepicker
-python dash_datetimepicker/usage.py
+python usage.py
 ```
