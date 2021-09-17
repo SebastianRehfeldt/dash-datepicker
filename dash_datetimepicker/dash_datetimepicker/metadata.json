@@ -65,6 +65,28 @@
           "value": "new Date(new Date() - 1000 * 60 * 60 * 24)",
           "computed": false
         }
+      },
+      "utc": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "When true, input time values will be interpreted as UTC (Zulu time) by Moment.js. Otherwise they will default to the user's local timezone.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "locale": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Manually set the locale for the react-datetime instance. Moment.js locale needs to be loaded to be used, see i18n docs.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   }
