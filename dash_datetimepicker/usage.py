@@ -6,13 +6,13 @@ import dash_html_components as html
 app = dash.Dash(__name__)
 
 app.layout = html.Div(
-    [dash_datetimepicker.DashDatetimepicker(id="input"), html.Div(id="output")]
+    [dash_datetimepicker.DashDatetimepicker(id="input", utc=True, locale="fr"), html.Div(id="output")]
 )
 
 
-@app.callback(Output("output", "children"), [Input("input", "startDate")])
-def display_output(startDate):
-    return "You have entered {}".format(startDate)
+@app.callback(Output("output", "children"), [Input("input", "startDate"), Input("input", "endDate")])
+def display_output(startDate, endDate):
+    return "You have entered range from {} to {}".format(startDate, endDate)
 
 
 if __name__ == "__main__":
