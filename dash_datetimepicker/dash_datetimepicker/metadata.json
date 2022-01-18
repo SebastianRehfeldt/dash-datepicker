@@ -89,5 +89,101 @@
         }
       }
     }
+  },
+  "src/lib/components/DashDatetimepickerSingle.react.js": {
+    "description": "Dash Datetime Single Picker is a component for selecting a single date + time.",
+    "displayName": "DashDatetimepicker",
+    "methods": [
+      {
+        "name": "renderDay",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "currentDate",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "date",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      },
+      "date": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "instanceOf",
+              "value": "moment"
+            },
+            {
+              "name": "instanceOf",
+              "value": "Date"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The date of the range picker. It will fire a dash callback if it is updated.",
+        "defaultValue": {
+          "value": "new Date()",
+          "computed": false
+        }
+      },
+      "utc": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "When true, input time values will be interpreted as UTC (Zulu time) by Moment.js. Otherwise they will default to the user's local timezone.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "locale": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Manually set the locale for the react-datetime instance. Moment.js locale needs to be loaded to be used, see i18n docs.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
   }
 }
