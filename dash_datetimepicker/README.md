@@ -34,7 +34,7 @@ npm run build
 # Test fresh build
 deactivate
 python setup.py sdist
-pip install dist/dash_datetimepicker-0.0.6.tar.gz
+pip install dist/dash_datetimepicker-0.0.7.tar.gz
 python usage.py
 
 # eventually create pypi account
